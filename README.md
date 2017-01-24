@@ -45,7 +45,7 @@ The plugin can either be installed from git repository, from local file system t
 ionic plugin add [local folder name]
 
 # ~~ from github ~~
-ionic plugin add https://github.com/jvjvjv/cordova-plugin-background-mode.git
+ionic plugin add https://github.com/jvjvjv/cordova-plugin-background-mode-fork.git
 ```
 
 More informations can be found [here][PGB_plugin].
