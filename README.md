@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/cordova-plugin-background-mode.svg)](http://badge.fury.io/js/cordova-plugin-background-mode)
+<!-- [![npm version](https://badge.fury.io/js/cordova-plugin-background-mode.svg)](http://badge.fury.io/js/cordova-plugin-background-mode) -->
 
 <p align="right">
     <a href="https://github.com/katzer/cordova-plugin-background-mode/tree/example">EXAMPLE :point_right:</a>
@@ -33,7 +33,6 @@ __Update:__ The plugin ID has changed to cordova-plugin-background-mode and is a
 ## Supported Platforms
 - __iOS__ (_including iOS8_)
 - __Android__ _(SDK >=11)_
-- __WP8__
 
 
 ## Installation
@@ -42,8 +41,11 @@ The plugin can either be installed from git repository, from local file system t
 ### Local development environment
 
 ```bash
-# ~~ from master branch ~~
-ionic plugin rm cordova-plugin-background-mode-fork; ionic plugin add background-mode-fork
+# ~~ from local folder ~~
+ionic plugin add [local folder name]
+
+# ~~ from github ~~
+ionic plugin add https://github.com/jvjvjv/cordova-plugin-background-mode.git
 ```
 
 More informations can be found [here][PGB_plugin].
