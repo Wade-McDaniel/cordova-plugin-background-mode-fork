@@ -47,29 +47,29 @@ NSString *const kAPPBackgroundEventFailure = @"failure";
  */
 - (void) observeLifeCycle
 {
-    NSNotificationCenter* listener = [NSNotificationCenter defaultCenter];
-
-    if (&UIApplicationDidEnterBackgroundNotification && &UIApplicationWillEnterForegroundNotification) {
-
-        [listener addObserver:self
-                     selector:@selector(keepAwake)
-                         name:UIApplicationDidEnterBackgroundNotification
-                       object:nil];
-
-        [listener addObserver:self
-                     selector:@selector(stopKeepingAwake)
-                         name:UIApplicationWillEnterForegroundNotification
-                       object:nil];
-
-        [listener addObserver:self
-                     selector:@selector(handleAudioSessionInterruption:)
-                         name:AVAudioSessionInterruptionNotification
-                       object:nil];
-
-    } else {
-        [self enable:NULL];
-        [self keepAwake];
-    }
+//    NSNotificationCenter* listener = [NSNotificationCenter defaultCenter];
+//
+//    if (&UIApplicationDidEnterBackgroundNotification && &UIApplicationWillEnterForegroundNotification) {
+//
+//        [listener addObserver:self
+//                     selector:@selector(keepAwake)
+//                         name:UIApplicationDidEnterBackgroundNotification
+//                       object:nil];
+//
+//        [listener addObserver:self
+//                     selector:@selector(stopKeepingAwake)
+//                         name:UIApplicationWillEnterForegroundNotification
+//                       object:nil];
+//
+//        [listener addObserver:self
+//                     selector:@selector(handleAudioSessionInterruption:)
+//                         name:AVAudioSessionInterruptionNotification
+//                       object:nil];
+//
+//    } else {
+//        [self enable:NULL];
+//        [self keepAwake];
+//    }
 }
 
 #pragma mark -
@@ -103,7 +103,7 @@ NSString *const kAPPBackgroundEventFailure = @"failure";
  */
 - (void) keepAwake {
     if (enabled) {
-        [audioPlayer play];
+//        [audioPlayer play];
         [self fireEvent:kAPPBackgroundEventActivate withParams:NULL];
     }
 }
@@ -121,42 +121,42 @@ NSString *const kAPPBackgroundEventFailure = @"failure";
         [self fireEvent:kAPPBackgroundEventDeactivate withParams:NULL];
     }
 
-    [audioPlayer pause];
+//    [audioPlayer pause];
 }
 
 /**
  * Configure the audio player.
  */
 - (void) configureAudioPlayer {
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"appbeep"
-                                                     ofType:@"wav"];
+//    NSString* path = [[NSBundle mainBundle] pathForResource:@"appbeep"
+//                                                     ofType:@"wav"];
 
-    NSURL* url = [NSURL fileURLWithPath:path];
+//    NSURL* url = [NSURL fileURLWithPath:path];
 
 
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url
-                                                         error:NULL];
+//    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url
+//                                                         error:NULL];
 
     // Silent
-    audioPlayer.volume = 0;
+//    audioPlayer.volume = 0;
     // Infinite
-    audioPlayer.numberOfLoops = -1;
+//    audioPlayer.numberOfLoops = -1;
 };
 
 /**
  * Configure the audio session.
  */
 - (void) configureAudioSession {
-    AVAudioSession* session = [AVAudioSession
-                               sharedInstance];
+//    AVAudioSession* session = [AVAudioSession
+//                               sharedInstance];
 
     // Play music even in background and dont stop playing music
     // even another app starts playing sound
-    [session setCategory:AVAudioSessionCategoryPlayback
+//    [session setCategory:AVAudioSessionCategoryPlayback
              // withOptions:AVAudioSessionCategoryOptionMixWithOthers
-                   error:NULL];
+//                   error:NULL];
 
-    [session setActive:YES error:NULL];
+//    [session setActive:YES error:NULL];
 };
 
 #pragma mark -
