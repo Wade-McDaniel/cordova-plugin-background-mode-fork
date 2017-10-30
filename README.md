@@ -41,8 +41,8 @@ The plugin can either be installed from git repository, from local file system t
 ### Local development environment
 
 ```bash
-# ~~ from local folder ~~
-ionic plugin add [local folder name]
+# ~~ from local folder during development ~~
+ionic plugin rm cordova-plugin-background-mode-fork; ionic plugin add cordova-plugin-background-mode-fork
 
 # ~~ from github ~~
 ionic plugin add https://github.com/jvjvjv/cordova-plugin-background-mode-fork.git
